@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Whatever{% endblock %}</title>
+  <!-- Addresses Favicon error in devtools console -->
+  <link rel="icon" href="data:,">
+
+  <!-- George used this to remove his REACT DEVTOOL alert. (I no has.) -->
+  <script>  
+    __REACT_DEVTOOLS_GLOBAL_HOOK__ = {
+      supportsFiber: true,
+      inject: function() {},
+      onCommitFiberRoot: function() {},
+      onCommitFiberUnmount: function() {},
+    };
+  </script>
+
+    <!-- Gets rid of SharedArrayBuffer alert -->
+  <script>SharedArrayBuffer = ArrayBuffer;</script>
+
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+  <script src="https://unpkg.com/react@16.14.0/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16.14.0/umd/react-dom.development.js" crossorigin></script>
+  <!-- Note, React has a V17, but HB stuff will all break. -->
+  <!-- Note, React folks recommend crossorigin above -->
+</head>
+<body>
+  {% block body %}Whatever{% endblock %}
+</body>
+</html>
